@@ -15,6 +15,7 @@ export default function Routes() {
           tabBarIconStyle: {
             display: "none",
           },
+          headerShown: false,
           tabBarInactiveBackgroundColor: colors.orange,
           tabBarInactiveTintColor: colors.light,
           tabBarActiveBackgroundColor: colors.purple,

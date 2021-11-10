@@ -5,18 +5,22 @@ import {
   SafeAreaView,
   StatusBar,
 } from "react-native";
-import styles from "../../global";
+import globalStyles, { colors } from "../../global";
+import styles from "./styles";
 
 export default function CommonScreen({ children }) {
   return (
-    <SafeAreaView style={styles.fill}>
-      <StatusBar />
-      <KeyboardAvoidingView
-        style={styles.fill}
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
-      >
-        {children}
-      </KeyboardAvoidingView>
-    </SafeAreaView>
+    <>
+      <SafeAreaView style={styles.adjustSreen}>
+        <StatusBar backgroundColor={colors.purple} />
+        <KeyboardAvoidingView
+          style={globalStyles.fill}
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
+        >
+          {children}
+        </KeyboardAvoidingView>
+      </SafeAreaView>
+      <SafeAreaView style={styles.adjustBottomSreen} />
+    </>
   );
 }
